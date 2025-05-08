@@ -1,0 +1,52 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Domain Selector">
+	<div class="container">
+		<h1>Welcome</h1>
+		<p>Please select a domain:</p>
+		<ul>
+			<li><a href="/gnarlybob.html">gnarlybob.net</a></li>
+			<li><a href="/bitspace-org.html">bitspace.org</a></li>
+			<li><a href="/bitspace-dev.html">bitspace.dev</a></li>
+			<li><a href="/chriswoods.html">chriswoods.dev</a></li>
+		</ul>
+	</div>
+</Layout>
+
+<style>
+	.container {
+		margin: 4rem auto;
+		width: 90%;
+		max-width: 600px;
+		text-align: center;
+	}
+	
+	ul {
+		list-style: none;
+		padding: 0;
+		margin: 2rem 0;
+	}
+	
+	li {
+		margin: 1rem 0;
+	}
+	
+	a {
+		color: #333;
+		text-decoration: none;
+		font-size: 1.2rem;
+		border: 2px solid #333;
+		padding: 0.5rem 1rem;
+		border-radius: 4px;
+		transition: all 0.3s ease;
+		display: inline-block;
+		width: 80%;
+	}
+	
+	a:hover {
+		background: #333;
+		color: #f5f5f0;
+	}
+</style>

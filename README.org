@@ -1,0 +1,8 @@
+* Web Site Skeleton
+This repository contains what is essentially my first experiment in "vibe coding".
+
+First, a definition.
+
+/vibe coding/: I think [[https://en.wikipedia.org/wiki/Vibe_coding][the Wikipedia entry]] describes it well. The purest definition of the term means that the user prompts the language model and essentially just accepts every suggestion and response from the LLM without any real validation or double-checking. I think better terms might be "YOLO development" or "[[https://www.youtube.com/watch?v=mLyOj_QD4a4][Leeroy]] engineering".
+
+It's a pretty useful technique for quick throwaway projects, light proofs of concept, one-off tools, or demonstrations. It's probably also useful for a starter/skeleton for an actual software product or system. This latter use is how I'm using it here.

@@ -1,0 +1,81 @@
+* Multi-Domain Website Configuration
+
+This project contains configuration for hosting multiple websites:
+- gnarlybob.net
+- bitspace.org
+- bitspace.dev
+- chriswoods.dev
+
+** Project Structure
+
+- `etc/nginx-config/`: Contains nginx server configurations and SSL setup
+- `site-content/`: Astro project with simple welcome pages for each domain
+
+** Setup Instructions
+
+*** 1. Nginx Configuration
+
+1. Copy the nginx configuration files to your server:
+   ```bash
+   sudo cp etc/nginx-config/nginx.conf /etc/nginx/
+   sudo cp etc/nginx-config/*.conf /etc/nginx/sites-available/
+   ```
+
+2. Enable the sites:
+   ```bash
+   cd /etc/nginx/sites-enabled/
+   sudo ln -s ../sites-available/gnarlybob.net.conf
+   sudo ln -s ../sites-available/bitspace.org.conf
+   sudo ln -s ../sites-available/bitspace.dev.conf
+   sudo ln -s ../sites-available/chriswoods.dev.conf
+   ```
+
+*** 2. SSL Certificates with Certbot
+
+1. Install certbot if you haven't already:
+   ```bash
+   sudo apt update
+   sudo apt install certbot
+   ```
+
+2. Run the certbot script:
+   ```bash
+   sudo bash etc/nginx-config/certbot.sh
+   ```
+
+*** 3. Building the Website
+
+1. Build the Astro project:
+   ```bash
+   cd site-content
+   npm install
+   npm run build
+   ```
+
+2. Copy the built files to the appropriate web directories:
+   ```bash
+   sudo mkdir -p /var/www/gnarlybob.net
+   sudo mkdir -p /var/www/bitspace.org
+   sudo mkdir -p /var/www/bitspace.dev
+   sudo mkdir -p /var/www/chriswoods.dev
+   
+   sudo cp -r dist/gnarlybob.html /var/www/gnarlybob.net/index.html
+   sudo cp -r dist/bitspace-org.html /var/www/bitspace.org/index.html
+   sudo cp -r dist/bitspace-dev.html /var/www/bitspace.dev/index.html
+   sudo cp -r dist/chriswoods.html /var/www/chriswoods.dev/index.html
+   ```
+
+3. Set appropriate permissions:
+   ```bash
+   sudo chown -R www-data:www-data /var/www
+   ```
+
+4. Restart nginx:
+   ```bash
+   sudo systemctl restart nginx
+   ```
+
+** Maintenance
+
+- SSL certificates will automatically renew via the crontab job set in the certbot script
+- To update the website content, modify the Astro files in `site-content/` and rebuild
