@@ -6,3 +6,9 @@ First, a definition.
 /vibe coding/: I think [[https://en.wikipedia.org/wiki/Vibe_coding][the Wikipedia entry]] describes it well. The purest definition of the term means that the user prompts the language model and essentially just accepts every suggestion and response from the LLM without any real validation or double-checking. I think better terms might be "YOLO development" or "[[https://www.youtube.com/watch?v=mLyOj_QD4a4][Leeroy]] engineering".
 
 It's a pretty useful technique for quick throwaway projects, light proofs of concept, one-off tools, or demonstrations. It's probably also useful for a starter/skeleton for an actual software product or system. This latter use is how I'm using it here.
+
+* 2025-05-14: How it went
+Well, pretty good. I only prompted the model [[file:initial-interaction.org][once]]. I didn't run [[file:build-and-deploy.sh][the shell script]], but I ran the steps and commands manually, understanding what I was running. I don't think there were many changes.
+I already had the DNS set up and the VPS paid for. I followed this completely and all four domains are up and running in nginx with astro and a very basic hello, world sort of thing.
+I'm pretty impressed.
+
